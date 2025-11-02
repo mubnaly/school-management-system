@@ -1,6 +1,10 @@
 @extends('errors::minimal')
 
-@section('title', __('Halaman Kadaluarsa'))
+{{-- Page Title --}}
+@section('title', __('Page Expired'))
+{{-- Error Code --}}
 @section('code', '419')
-@section('message', __('Halaman Kadaluarsa!'))
-@section('detail', __('Halaman yang anda akses sudah kadaluarsa'))
+{{-- Main Message --}}
+@section('message', __('Session Expired!'))
+{{-- Detail Message --}}
+@section('detail', __('The session you were attempting to access has expired. Please refresh the page and try again.'))

@@ -30,7 +30,8 @@
                         <h1 class="text-white font-size-180 font-weight-bold error-page-title">@yield('code')</h1>
                         <h1 class="text-white">@yield('message')</h1>
                         <h3 class="text-white">@yield('detail')</h3>
-                        <div class="my-30"><a href="{{ route('dashboard') }}" class="btn btn-info btn-rounded">Kembali ke halaman utama</a></div>
+                        <div class="my-30"><a href="{{ route('dashboard') }}" class="btn btn-info btn-rounded">Go to
+                                Home Page</a></div>
                     </div>
                 </div>
             </div>

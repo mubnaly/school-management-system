@@ -1,6 +1,6 @@
 @extends('errors::minimal')
 
-@section('title', __('Halaman Tidak Sah'))
+@section('title', __('Unauthorized'))
 @section('code', '401')
-@section('message', __('Halaman Tidak Sah!'))
-@section('detail', __('Sepertinya ada kesalahan pada kresendial'))
+@section('message', __('Unauthorized'))
+@section('detail', __('It seems there was an error with the credentials provided.'))

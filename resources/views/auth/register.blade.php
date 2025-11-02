@@ -29,7 +29,7 @@
                 <div class="row justify-content-center no-gutters">
                     <div class="col-lg-4 col-md-5 col-12">
                         <div class="content-top-agile p-10">
-                            <h2 class="text-white">PENDAFTARAN</h2>
+                            <h2 class="text-white">Register</h2>
                             <p class="text-white-50">School Management System</p>
                         </div>
                         <div class="p-30 rounded30 box-shadowed b-2 b-dashed">
@@ -39,33 +39,45 @@
                                 <div class="form-group">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text bg-transparent text-white"><i class="ti-user"></i></span>
+                                            <span class="input-group-text bg-transparent text-white"><i
+                                                    class="ti-user"></i></span>
                                         </div>
-                                        <input id="name" type="text" name="name" :value="old('name')" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Nama Lengkap" required autofocus autocomplete="name">
+                                        <input id="name" type="text" name="name" :value="old('name')"
+                                            class="form-control pl-15 bg-transparent text-white plc-white"
+                                            placeholder="Ahmed Ali" required autofocus autocomplete="name">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text bg-transparent text-white"><i class="ti-email"></i></span>
+                                            <span class="input-group-text bg-transparent text-white"><i
+                                                    class="ti-email"></i></span>
                                         </div>
-                                        <input id="email" type="email" name="email" :value="old('email')" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Email" required>
+                                        <input id="email" type="email" name="email" :value="old('email')"
+                                            class="form-control pl-15 bg-transparent text-white plc-white"
+                                            placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text bg-transparent text-white"><i class="ti-lock"></i></span>
+                                            <span class="input-group-text bg-transparent text-white"><i
+                                                    class="ti-lock"></i></span>
                                         </div>
-                                        <input id="password" name="password" type="password" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Kata Sandi" required autocomplete="new-password">
+                                        <input id="password" name="password" type="password"
+                                            class="form-control pl-15 bg-transparent text-white plc-white"
+                                            placeholder="Password" required autocomplete="new-password">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text bg-transparent text-white"><i class="ti-lock"></i></span>
+                                            <span class="input-group-text bg-transparent text-white"><i
+                                                    class="ti-lock"></i></span>
                                         </div>
-                                        <input id="password_confirmation" type="password" name="password_confirmation" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Konfirmasi Kata Sandi" required autocomplete="new-password">
+                                        <input id="password_confirmation" type="password" name="password_confirmation"
+                                            class="form-control pl-15 bg-transparent text-white plc-white"
+                                            placeholder="password confirmation" required autocomplete="new-password">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -77,7 +89,8 @@
                                     </div> -->
                                     <!-- /.col -->
                                     <div class="col-12 text-center">
-                                        <button type="submit" class="btn btn-info btn-rounded margin-top-10 ">DAFTAR</button>
+                                        <button type="submit"
+                                            class="btn btn-info btn-rounded margin-top-10 ">Register</button>
                                     </div>
                                     <!-- /.col -->
                                 </div>
@@ -94,7 +107,8 @@
                             </div> -->
 
                             <div class="text-center">
-                                <p class="mt-15 mb-0 text-white">Sudah memiliki akun?<a href="{{ route('login') }}" class="ml-5 hover-info"> Masuk</a></p>
+                                <p class="mt-15 mb-0 text-white">Do you have an account?<a href="{{ route('login') }}"
+                                        class="ml-5 hover-info">Login</a></p>
                             </div>
                         </div>
                     </div>

@@ -29,7 +29,7 @@
                 <div class="row justify-content-center no-gutters">
                     <div class="col-lg-4 col-md-5 col-12">
                         <div class="content-top-agile p-10">
-                            <h2 class="text-white">MASUK</h2>
+                            <h2 class="text-white">OLOOM</h2>
                             <p class="text-white-50">School Management System</p>
                         </div>
                         <div class="p-30 rounded30 box-shadowed b-2 b-dashed">
@@ -40,35 +40,42 @@
                                 <div class="form-group">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text bg-transparent text-white"><i class="ti-email"></i></span>
+                                            <span class="input-group-text bg-transparent text-white"><i
+                                                    class="ti-email"></i></span>
                                         </div>
-                                        <input type="email" id="email" name="email" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Email" :value="old('email')" required autofocus>
+                                        <input type="email" id="email" name="email"
+                                            class="form-control pl-15 bg-transparent text-white plc-white"
+                                            placeholder="Email" :value="old('email')" required autofocus>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text  bg-transparent text-white"><i class="ti-lock"></i></span>
+                                            <span class="input-group-text  bg-transparent text-white"><i
+                                                    class="ti-lock"></i></span>
                                         </div>
-                                        <input type="password" id="password" name="password" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Kata Sandi" required autocomplete="current-password">
+                                        <input type="password" id="password" name="password"
+                                            class="form-control pl-15 bg-transparent text-white plc-white"
+                                            placeholder="Password" required autocomplete="current-password">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="checkbox text-white">
                                             <input name="remember" type="checkbox" id="basic_checkbox_1">
-                                            <label for="basic_checkbox_1">Ingat Saya</label>
+                                            <label for="basic_checkbox_1">Remember me</label>
                                         </div>
                                     </div>
                                     <!-- /.col -->
                                     <div class="col-6">
                                         <div class="fog-pwd text-right">
-                                            <a href="{{ route('password.request') }}" class="text-white hover-info"><i class="ion ion-locked"></i> Lupa Sandi?</a><br>
+                                            <a href="{{ route('password.request') }}" class="text-white hover-info"><i
+                                                    class="ion ion-locked"></i> Forget Password?</a><br>
                                         </div>
                                     </div>
                                     <!-- /.col -->
                                     <div class="col-12 text-center">
-                                        <button type="submit" class="btn btn-info btn-rounded mt-10">MASUK</button>
+                                        <button type="submit" class="btn btn-info btn-rounded mt-10">Login</button>
                                     </div>
                                     <!-- /.col -->
                                 </div>
@@ -85,7 +92,8 @@
                             </div> -->
 
                             <div class="text-center">
-                                <p class="mt-15 mb-0 text-white">Belum punya akun? <a href="{{ route('register') }}" class="hover-info ml-5">Daftar</a></p>
+                                <p class="mt-15 mb-0 text-white">Don't have an account?<a href="{{ route('register') }}"
+                                        class="hover-info ml-5">Register</a></p>
                             </div>
                         </div>
                     </div>
@@ -100,58 +108,58 @@
     <script src="{{ asset('../assets/icons/feather-icons/feather.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        @if(Session::has('message'))
-        var type = "{{ Session::get('alert-type', 'info') }}"
-        var toastMixin = Swal.mixin({
-            toast: true,
-            icon: 'success',
-            background: '#1A233B',
-            title: '',
-            animation: false,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 5000,
-            timerProgressBar: false,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            var toastMixin = Swal.mixin({
+                toast: true,
+                icon: 'success',
+                background: '#1A233B',
+                title: '',
+                animation: false,
+                position: 'top-right',
+                showConfirmButton: false,
+                timer: 5000,
+                timerProgressBar: false,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            });
+            switch (type) {
+                case 'info':
+                    toastMixin.fire({
+                        background: '#1A233B',
+                        iconColor: '#7a15f7',
+                        animation: true,
+                        title: "{{ Session::get('message') }}",
+                    });
+                    break;
+                case 'warning':
+                    toastMixin.fire({
+                        background: '#1A233B',
+                        iconColor: '#F18700',
+                        animation: true,
+                        title: "{{ Session::get('message') }}",
+                    });
+                    break;
+                case 'success':
+                    toastMixin.fire({
+                        background: '#1A233B',
+                        iconColor: '#00BC8B',
+                        animation: true,
+                        title: "{{ Session::get('message') }}",
+                    });
+                    break;
+                case 'error':
+                    toastMixin.fire({
+                        background: '#1A233B',
+                        icon: 'error',
+                        iconColor: '#ef3737',
+                        animation: true,
+                        title: "{{ Session::get('message') }}",
+                    });
+                    break;
             }
-        });
-        switch (type) {
-            case 'info':
-                toastMixin.fire({
-                    background: '#1A233B',
-                    iconColor: '#7a15f7',
-                    animation: true,
-                    title: "{{ Session::get('message') }}",
-                });
-                break;
-            case 'warning':
-                toastMixin.fire({
-                    background: '#1A233B',
-                    iconColor: '#F18700',
-                    animation: true,
-                    title: "{{ Session::get('message') }}",
-                });
-                break;
-            case 'success':
-                toastMixin.fire({
-                    background: '#1A233B',
-                    iconColor: '#00BC8B',
-                    animation: true,
-                    title: "{{ Session::get('message') }}",
-                });
-                break;
-            case 'error':
-                toastMixin.fire({
-                    background: '#1A233B',
-                    icon: 'error',
-                    iconColor: '#ef3737',
-                    animation: true,
-                    title: "{{ Session::get('message') }}",
-                });
-                break;
-        }
         @endif
     </script>
 

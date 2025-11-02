@@ -1,6 +1,6 @@
 @extends('errors::minimal')
 
-@section('title', __('Halaman Tidak Diizinkan'))
+@section('title', __('Forbidden'))
 @section('code', '403')
-@section('message', __($exception->getMessage() ?: 'Halaman Tidak Diizinkan'))
-@section('detail', __('Anda tidak diperbolehkan mengakses halaman ini'))
+@section('message', __($exception->getMessage() ?: 'Forbidden'))
+@section('detail', __('You are not allowed to access this page.'))

@@ -1,6 +1,6 @@
 @extends('errors::minimal')
 
-@section('title', __('Server Tidak Tersedia'))
+@section('title', __('Service Unavailable'))
 @section('code', '503')
-@section('message', __('Server Tidak Tersedia'))
-@section('detail', __('Server yang anda akses sudah tidak tersedia'))
+@section('message', __('Service Unavailable'))
+@section('detail', __('The server you are trying to access is currently unavailable.'))

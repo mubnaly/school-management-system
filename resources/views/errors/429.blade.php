@@ -1,6 +1,6 @@
 @extends('errors::minimal')
 
-@section('title', __('Terlalu Banyak Permintaan'))
+@section('title', __('Too Many Requests'))
 @section('code', '429')
-@section('message', __('Terlalu Banyak Permintaan!'))
-@section('detail', __('Anda sudah melebihi batas permintaan'))
+@section('message', __('Too Many Requests!'))
+@section('detail', __('You have exceeded the request limit.'))
