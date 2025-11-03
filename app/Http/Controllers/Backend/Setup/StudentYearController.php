@@ -35,7 +35,7 @@ class StudentYearController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Tahun Angkatan Berhasil Ditambahkan',
+            'message' => 'Year of Successful Addition',
             'alert-type' => 'success'
         );
 
@@ -60,7 +60,7 @@ class StudentYearController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Tahun Angkatan Berhasil Diubah!',
+            'message' => 'The Year of the Batch Was Successfully Changed!',
             'alert-type' => 'success'
         );
 
@@ -73,7 +73,7 @@ class StudentYearController extends Controller
         $data->delete();
 
         $notification = array(
-            'message' => 'Tahun Angkatan Berhasil Dihapus!',
+            'message' => 'The Year of the Generation Was Successfully Removed!',
             'alert-type' => 'success'
         );
 

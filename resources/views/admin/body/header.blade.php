@@ -43,12 +43,11 @@
                     <ul class="dropdown-menu animated flipInX">
                         <li class="user-body">
                             <a class="dropdown-item" href="{{ route('profile.view') }}"><i
-                                    class="ti-user text-muted mr-2"></i> Profil</a>
-                            <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Ubah
-                                Profil</a>
+                                    class="ti-user text-muted mr-2"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Change
+                                Profile</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Kata
-                                Sandi</a>
+                            <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i>Password</a>
                         </li>
                     </ul>
                 </li>

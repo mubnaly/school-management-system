@@ -35,7 +35,7 @@ class SchoolSubjectController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Mata Pelajaran Berhasil Ditambahkan!',
+            'message' => 'Subjects Successfully Added!',
             'alert-type' => 'success'
         );
 
@@ -60,7 +60,7 @@ class SchoolSubjectController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Mata Pelajaran Berhasil Diubah!',
+            'message' => 'Subject Successfully Changed!',
             'alert-type' => 'success'
         );
 
@@ -73,7 +73,7 @@ class SchoolSubjectController extends Controller
         $data->delete();
 
         $notification = array(
-            'message' => 'Mata Pelajaran Berhasil Dihapus!',
+            'message' => 'Subjects Successfully Deleted!',
             'alert-type' => 'success'
         );
 

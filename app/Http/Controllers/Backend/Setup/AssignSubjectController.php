@@ -45,7 +45,7 @@ class AssignSubjectController extends Controller
             }
         }
         $notification = array(
-            'message' => 'Mata pelajaran berhasil ditetapkan!',
+            'message' => 'Subjects are successfully assigned!',
             'alert-type' => 'success'
         );
         return redirect()->route('assign.subject.view')->with($notification);
@@ -63,7 +63,7 @@ class AssignSubjectController extends Controller
     {
         if ($request->subject_id == NULL) {
             $notification = array(
-                'message' => 'Anda belum memilih mata pelajaran!',
+                'message' => 'You have NOT chosen a subject yet!',
                 'alert-type' => 'error'
             );
             return redirect()->route('assign.subject.edit', $class_id)->with($notification);
@@ -82,7 +82,7 @@ class AssignSubjectController extends Controller
             }
         }
         $notification = array(
-            'message' => 'Kurikulum berhasil diubah!',
+            'message' => 'The curriculum was successfully changed!',
             'alert-type' => 'success'
         );
         return redirect()->route('assign.subject.view')->with($notification);
@@ -98,7 +98,7 @@ class AssignSubjectController extends Controller
     {
         AssignSubject::where('class_id', $class_id)->delete();
         $notification = array(
-            'message' => 'Kurikulum berhasil dihapus!',
+            'message' => 'The curriculum was successfully deleted!',
             'alert-type' => 'success'
         );
         return redirect()->route('assign.subject.view')->with($notification);

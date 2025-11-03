@@ -35,7 +35,7 @@ class StudentClassController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Kelas Berhasil Ditambahkan!',
+            'message' => 'Successfully added classes!',
             'alert-type' => 'success'
         );
 
@@ -60,7 +60,7 @@ class StudentClassController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Nama Kelas Berhasil Diubah!',
+            'message' => 'Class Name Successfully Changed!',
             'alert-type' => 'success'
         );
 
@@ -73,7 +73,7 @@ class StudentClassController extends Controller
         $data->delete();
 
         $notification = array(
-            'message' => 'Kelas Berhasil Dihapus!',
+            'message' => 'Class Successfully Deleted!',
             'alert-type' => 'success'
         );
 

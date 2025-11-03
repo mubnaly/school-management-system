@@ -25,7 +25,7 @@ class ExamTypeController extends Controller
 
         // if ($role == 'Admin') {
         //     $notification = array(
-        //         'message' => 'Anda tidak diizinkan mengakses halaman tersebut!',
+        //         'message' => 'You are not allowed to access the page!',
         //         'alert-type' => 'warning'
         //     );
         //     return redirect()->route('dashboard')->with($notification);
@@ -44,7 +44,7 @@ class ExamTypeController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Kategori Ujian Berhasil Ditambahkan!',
+            'message' => 'Exam Categories Successfully Added!',
             'alert-type' => 'success'
         );
 
@@ -69,7 +69,7 @@ class ExamTypeController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Kategori Ujian Berhasil Diubah!',
+            'message' => 'Exam Categories Successfully Changed!',
             'alert-type' => 'success'
         );
 
@@ -82,7 +82,7 @@ class ExamTypeController extends Controller
         $data->delete();
 
         $notification = array(
-            'message' => 'Kategori Ujian Berhasil Dihapus!',
+            'message' => 'Exam Category Successfully Deleted!',
             'alert-type' => 'success'
         );
 

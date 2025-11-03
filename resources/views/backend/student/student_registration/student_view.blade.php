@@ -12,7 +12,7 @@
                     <div class="col-12">
                         <div class="box bb-3 border-info">
                             <div class="box-header">
-                                <h4 class="box-title">Cari <strong>Siswa</strong></h4>
+                                <h4 class="box-title">Look for <strong>Student</strong></h4>
                             </div>
 
                             <div class="box-body">
@@ -20,10 +20,10 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>Tahun Angkatan</h5>
+                                                <h5>Year of the Force</h5>
                                                 <div class="controls">
                                                     <select name="year_id" class="form-control">
-                                                        <option value="" selected="" disabled="">Pilih Tahun
+                                                        <option value="" selected="" disabled="">Select Year
                                                         </option>
                                                         @foreach ($years as $year)
                                                             <option value="{{ $year->id }}"
@@ -37,10 +37,10 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>Kelas</h5>
+                                                <h5>Class</h5>
                                                 <div class="controls">
                                                     <select name="class_id" class="form-control">
-                                                        <option value="" selected="" disabled="">Pilih Kelas
+                                                        <option value="" selected="" disabled="">Select Class
                                                         </option>
                                                         @foreach ($classes as $class)
                                                             <option value="{{ $class->id }}"
@@ -54,7 +54,7 @@
 
                                         <div class="col-md-4" style="padding-top: 21px;">
                                             <input type="submit" class="btn btn-rounded btn-primary mb-5" name="search"
-                                                value="Cari Siswa">
+                                                value="Find Students">
                                         </div>
                                     </div>
                                 </form>
@@ -63,9 +63,9 @@
 
                         <div class="box">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Daftar Siswa</h3>
+                                <h3 class="box-title">List of Students</h3>
                                 <a href="{{ route('student.registration.add') }}" style="float: right;"
-                                    class="btn btn-rounded btn-success mb-5"> Tambahkan Siswa</a>
+                                    class="btn btn-rounded btn-success mb-5"> Add Student</a>
                             </div>
 
                             <!-- /.box-header -->
@@ -79,16 +79,16 @@
                                             <thead>
                                                 <tr>
                                                     <th width="5%">No.</th>
-                                                    <th>Nama</th>
+                                                    <th>Name</th>
                                                     <th>NIS</th>
                                                     <th>Roll</th>
-                                                    <th>Tahun</th>
-                                                    <th>Kelas</th>
-                                                    <th>Foto</th>
+                                                    <th>Year</th>
+                                                    <th>Class</th>
+                                                    <th>Image</th>
                                                     @if (Auth::user()->role == 'Admin')
-                                                        <th>Kode</th>
+                                                        <th>Code</th>
                                                     @endif
-                                                    <th width="25%">Tindakan</th>
+                                                    <th width="25%">Action</th>
 
                                                 </tr>
                                             </thead>
@@ -129,16 +129,16 @@
                                             <thead>
                                                 <tr>
                                                     <th width="5%">No.</th>
-                                                    <th>Nama</th>
+                                                    <th>Name</th>
                                                     <th>NIS</th>
                                                     <th>Roll</th>
-                                                    <th>Tahun</th>
-                                                    <th>Kelas</th>
-                                                    <th>Foto</th>
+                                                    <th>Year</th>
+                                                    <th>Class</th>
+                                                    <th>Image</th>
                                                     @if (Auth::user()->role == 'Admin')
-                                                        <th>Kode</th>
+                                                        <th>Code</th>
                                                     @endif
-                                                    <th width="25%">Tindakan</th>
+                                                    <th width="25%">Action</th>
 
                                                 </tr>
                                             </thead>

@@ -43,7 +43,7 @@ class FeeAmountController extends Controller
             }
         }
         $notification = array(
-            'message' => 'Tagihan biaya berhasil ditambahkan!',
+            'message' => 'Fee bill successfully added!',
             'alert-type' => 'success'
         );
         return redirect()->route('fee.amount.view')->with($notification);
@@ -61,7 +61,7 @@ class FeeAmountController extends Controller
     {
         if ($request->class_id == NULL) {
             $notification = array(
-                'message' => 'Anda belum memilih kelas!',
+                'message' => 'You have NOT chosen a class yet!',
                 'alert-type' => 'error'
             );
             return redirect()->route('fee.amount.edit', $fee_category_id)->with($notification);
@@ -78,7 +78,7 @@ class FeeAmountController extends Controller
             }
         }
         $notification = array(
-            'message' => 'Tagihan biaya berhasil diubah!',
+            'message' => 'The bill of fees was successfully changed!',
             'alert-type' => 'success'
         );
         return redirect()->route('fee.amount.view')->with($notification);
@@ -94,7 +94,7 @@ class FeeAmountController extends Controller
     {
         FeeCategoryAmount::where('fee_category_id', $fee_category_id)->delete();
         $notification = array(
-            'message' => 'Tagihan biaya berhasil dihapus!',
+            'message' => 'The fee bill was successfully removed!',
             'alert-type' => 'success'
         );
         return redirect()->route('fee.amount.view')->with($notification);

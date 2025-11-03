@@ -1,59 +1,58 @@
 @extends('admin.admin_master')
 @section('admin')
+    <div class="content-wrapper">
+        <div class="container-full">
+            <!-- Content Header (Page header) -->
 
+            <section class="content">
+                <!-- Basic Forms -->
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">Add Cost Categories</h4>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col">
 
-<div class="content-wrapper">
-    <div class="container-full">
-        <!-- Content Header (Page header) -->
-
-        <section class="content">
-            <!-- Basic Forms -->
-            <div class="box">
-                <div class="box-header with-border">
-                    <h4 class="box-title">Tambahkan Kategori Biaya</h4>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col">
-
-                            <form method="post" action="{{ route('store.fee.category') }}">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-12">
+                                <form method="post" action="{{ route('store.fee.category') }}">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-12">
 
 
 
-                                        <div class="form-group">
-                                            <h5>Kategori Biaya <span class="text-danger">*</span></h5>
-                                            <div class="controls">
-                                                <input type="text" name="name" class="form-control" required="">
-                                                @error('name')
-                                                <span class="text-danger">Kategori biaya yang anda masukan sudah ada!</span>
-                                                @enderror
+                                            <div class="form-group">
+                                                <h5>Cost Category<span class="text-danger">*</span></h5>
+                                                <div class="controls">
+                                                    <input type="text" name="name" class="form-control"
+                                                        required="">
+                                                    @error('name')
+                                                        <span class="text-danger">The fee category you entered already
+                                                            exists!</span>
+                                                    @enderror
+                                                </div>
+
                                             </div>
 
+                                            <div class="text-xs-right">
+                                                <input type="submit" class="btn btn-rounded btn-info mb-5" value="Add">
+                                            </div>
                                         </div>
+                                </form>
 
-                                        <div class="text-xs-right">
-                                            <input type="submit" class="btn btn-rounded btn-info mb-5" value="Tambahkan">
-                                        </div>
-                                    </div>
-                            </form>
-
+                            </div>
+                            <!-- /.col -->
                         </div>
-                        <!-- /.col -->
+                        <!-- /.row -->
                     </div>
-                    <!-- /.row -->
+                    <!-- /.box-body -->
                 </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
+                <!-- /.box -->
 
-        </section>
+            </section>
 
 
+        </div>
     </div>
-</div>
-
 @endsection

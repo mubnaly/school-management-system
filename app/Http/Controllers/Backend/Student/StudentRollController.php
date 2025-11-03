@@ -45,7 +45,7 @@ class StudentRollController extends Controller
             }
         } else {
             $notification = array(
-                'message' => 'Anda belum memasukan roll!',
+                'message' => 'You have NOT entered the roll!',
                 'alert-type' => 'error'
             );
 
@@ -53,7 +53,7 @@ class StudentRollController extends Controller
         }
 
         $notification = array(
-            'message' => 'Roll berhasil dibuat!',
+            'message' => 'Roll is made successfully!',
             'alert-type' => 'success'
         );
 

@@ -2,12 +2,8 @@
 @section('admin')
     @php
 
-    $totalStudent = DB::table('users')
-        ->where('usertype', 'Student')
-        ->count();
-    $totalEmployee = DB::table('users')
-        ->where('usertype', 'Employee')
-        ->count();
+        $totalStudent = DB::table('users')->where('usertype', 'Student')->count();
+        $totalEmployee = DB::table('users')->where('usertype', 'Employee')->count();
 
     @endphp
     <div class="content-wrapper">
@@ -23,7 +19,7 @@
                                     <i class="text-primary mr-0 font-size-24 mdi mdi-account-multiple"></i>
                                 </div>
                                 <div>
-                                    <p class="text-mute mt-20 mb-0 font-size-16">Jumlah Siswa</p>
+                                    <p class="text-mute mt-20 mb-0 font-size-16">Number of Students</p>
                                     <h3 class="text-white mb-0 font-weight-500">{{ $totalStudent }}</h3>
                                 </div>
                             </div>
@@ -89,7 +85,7 @@
                                         <thead>
                                             <tr class="text-uppercase bg-lightest">
                                                 <th style="min-width: 250px"><span class="text-white">products</span></th>
-                                                <th style="min-width: 100px"><span class="text-fade">pruce</span></th>
+                                                <th style="min-width: 100px"><span class="text-fade">Price</span></th>
                                                 <th style="min-width: 100px"><span class="text-fade">deposit</span></th>
                                                 <th style="min-width: 150px"><span class="text-fade">agent</span></th>
                                                 <th style="min-width: 130px"><span class="text-fade">status</span></th>
@@ -109,7 +105,7 @@
                                                         <div>
                                                             <a href="#"
                                                                 class="text-white font-weight-600 hover-primary mb-1 font-size-16">Vivamus
-                                                                consectetur</a>
+                                                                Consectetur</a>
                                                             <span class="text-fade d-block">Pharetra, Nulla , Nec,
                                                                 Aliquet</span>
                                                         </div>

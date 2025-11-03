@@ -19,6 +19,6 @@ $date = date('d');
         <!-- print date - month - year in p -->
         <p>{{ $date . ' ' . $month . ' ' . $year }} </p>
     </div>
-    <div>&copy; 2020 - {{ $year }}<a href="#"> My School</a> | All Rights Reserved.</div>
+    <div>&copy; {{ $year }}<a href="#">Dawwar</a> | All Rights Reserved.</div>
 
 </footer>

@@ -35,7 +35,7 @@ class DesignationController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Jabatan Aparatur Sekolah Berhasil Ditambahkan!',
+            'message' => 'School Apparatus Positions Successfully Added!',
             'alert-type' => 'success'
         );
 
@@ -60,7 +60,7 @@ class DesignationController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Jabatan Aparatur Sekolah Berhasil Diubah!',
+            'message' => 'The Position of School Apparatus Was Successfully Changed!',
             'alert-type' => 'success'
         );
 
@@ -73,7 +73,7 @@ class DesignationController extends Controller
         $data->delete();
 
         $notification = array(
-            'message' => 'Jabatan Aparatur Sekolah Berhasil Dihapus!',
+            'message' => 'School Apparatus Positions Successfully Removed!',
             'alert-type' => 'success'
         );
 

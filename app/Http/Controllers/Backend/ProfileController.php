@@ -51,7 +51,7 @@ class ProfileController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Profil anda berhasil diperbarui!',
+            'message' => 'Your profile has been successfully updated!',
             'alert-type' => 'success'
         );
 
@@ -77,7 +77,7 @@ class ProfileController extends Controller
             $user->save();
             Auth::logout();
             $notification = array(
-                'message' => 'Password anda berhasil diubah, silahkan login kembali!',
+                'message' => 'Your password has been changed successfully, please log in again!',
                 'alert-type' => 'success'
             );
 
@@ -85,7 +85,7 @@ class ProfileController extends Controller
         } else {
 
             $notification = array(
-                'message' => 'Password yang anda masukkan tidak cocok!',
+                'message' => 'The password you entered does not match!',
                 'alert-type' => 'error'
             );
 

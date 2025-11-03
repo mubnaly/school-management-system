@@ -126,7 +126,7 @@ class StudentRegistrationController extends Controller
         });
 
         $notification = array(
-            'message' => 'Siswa Berhasil Didaftarkan!',
+            'message' => 'Students Successfully Registered!',
             'alert-type' => 'success',
         );
 
@@ -183,7 +183,7 @@ class StudentRegistrationController extends Controller
         });
 
         $notification = array(
-            'message' => 'Data Siswa Berhasil Diubah!',
+            'message' => 'Student Data Successfully Changed!',
             'alert-type' => 'success',
         );
 
@@ -224,7 +224,7 @@ class StudentRegistrationController extends Controller
         });
 
         $notification = array(
-            'message' => 'Siswa Naik Kelas!',
+            'message' => 'Students Move Up!',
             'alert-type' => 'success',
         );
 

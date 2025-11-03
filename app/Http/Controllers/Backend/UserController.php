@@ -46,7 +46,7 @@ class UserController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Pengguna Berhasil Ditambahkan!',
+            'message' => 'Users Successfully Added!',
             'alert-type' => 'success'
         );
 
@@ -68,7 +68,7 @@ class UserController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Pengguna Berhasil Diubah!',
+            'message' => 'The user was successfully converted!',
             'alert-type' => 'success'
         );
 
@@ -81,7 +81,7 @@ class UserController extends Controller
         $user->delete();
 
         $notification = array(
-            'message' => 'Pengguna Berhasil Dihapus!',
+            'message' => 'The user was successfully removed!',
             'alert-type' => 'success'
         );
 

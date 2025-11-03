@@ -14,7 +14,7 @@
                     <div class="col-12">
                         <div class="box bb-3 border-info">
                             <div class="box-header">
-                                <h4 class="box-title">Roll <strong>Siswa</strong></h4>
+                                <h4 class="box-title">Roll <strong>Student</strong></h4>
                             </div>
 
                             <div class="box-body">
@@ -23,10 +23,10 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>Tahun Angkatan</h5>
+                                                <h5>Year of the Force</h5>
                                                 <div class="controls">
                                                     <select name="year_id" id="year_id" class="form-control">
-                                                        <option value="" selected="" disabled="">Pilih Tahun
+                                                        <option value="" selected="" disabled="">Select Year
                                                         </option>
                                                         @foreach ($years as $year)
                                                             <option value="{{ $year->id }}">
@@ -39,10 +39,10 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>Kelas</h5>
+                                                <h5>Class</h5>
                                                 <div class="controls">
                                                     <select name="class_id" id="class_id" class="form-control">
-                                                        <option value="" selected="" disabled="">Pilih Kelas
+                                                        <option value="" selected="" disabled="">Select Class
                                                         </option>
                                                         @foreach ($classes as $class)
                                                             <option value="{{ $class->id }}">
@@ -54,8 +54,8 @@
                                         </div>
 
                                         <div class="col-md-4" style="padding-top: 21px;">
-                                            <a href="#" id="search" class="btn btn-primary" name="search"> Cari
-                                                Siswa</a>
+                                            <a href="#" id="search" class="btn btn-primary" name="search">Find
+                                                Students</a>
                                         </div>
                                     </div>
 
@@ -65,9 +65,9 @@
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
-                                                        <th>Nama Siswa</th>
-                                                        <th>Nama Ayah</th>
-                                                        <th>Jenis Kelamin</th>
+                                                        <th>Student Name</th>
+                                                        <th>Father's Name</th>
+                                                        <th>Gender</th>
                                                         <th>Roll</th>
                                                     </tr>
                                                 </thead>

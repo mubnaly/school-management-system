@@ -1,26 +1,26 @@
 @php
-date_default_timezone_set('Asia/Jakarta');
-$user = DB::table('users')
-    ->where('id', Auth::user()->id)
-    ->first();
-$words = explode(' ', $user->name);
-$name = $words[0];
-$date = date('H');
-$greeting = '';
+    date_default_timezone_set('Asia/Jakarta');
+    $user = DB::table('users')
+        ->where('id', Auth::user()->id)
+        ->first();
+    $words = explode(' ', $user->name);
+    $name = $words[0];
+    $date = date('H');
+    $greeting = '';
 
-if ($date >= 3 && $date < 12) {
-    $greeting="Selamat Pagi, " . $name;
-    $icon="fa fa-solid fa-cloud-sun";
-} elseif ($date >= 12 && $date <= 15) {
-    $greeting="Selamat Siang, " . $name;
-    $icon="fa fa-solid fa-sun";
-} elseif ($date > 15 && $date < 18) {
-    $greeting="Selamat Sore, " . $name;
-    $icon="fa fa-solid fa-cloud-moon";
-} else {
-    $greeting="Selamat Malam, " . $name;
-    $icon="fa fa-solid fa-moon";
-}
+    if ($date >= 3 && $date < 12) {
+        $greeting = 'Mohamed Ali, ' . $name;
+        $icon = 'fa fa-solid fa-cloud-sun';
+    } elseif ($date >= 12 && $date <= 15) {
+        $greeting = 'Ali Shaaban, ' . $name;
+        $icon = 'fa fa-solid fa-sun';
+    } elseif ($date > 15 && $date < 18) {
+        $greeting = 'Ali Mohamed Ali, ' . $name;
+        $icon = 'fa fa-solid fa-cloud-moon';
+    } else {
+        $greeting = 'Asem Mohamed Ali, ' . $name;
+        $icon = 'fa fa-solid fa-moon';
+    }
 @endphp
 <!-- end logic -->
 

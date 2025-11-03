@@ -25,7 +25,7 @@ class FeeCategoryController extends Controller
 
         // if ($role == 'Admin') {
         //     $notification = array(
-        //         'message' => 'Anda tidak diizinkan mengakses halaman tersebut!',
+        //         'message' => 'You are not allowed to access the page!',
         //         'alert-type' => 'warning'
         //     );
         //     return redirect()->route('dashboard')->with($notification);
@@ -44,7 +44,7 @@ class FeeCategoryController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Kategori Biaya Berhasil Ditambahkan!',
+            'message' => 'Cost Category Successfully Added!',
             'alert-type' => 'success'
         );
 
@@ -69,7 +69,7 @@ class FeeCategoryController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Kategori Biaya Berhasil Diubah!',
+            'message' => 'Fee Category Successfully Changed!',
             'alert-type' => 'success'
         );
 
@@ -82,7 +82,7 @@ class FeeCategoryController extends Controller
         $data->delete();
 
         $notification = array(
-            'message' => 'Kategori Biaya Berhasil Dihapus!',
+            'message' => 'Cost Category Successfully Removed!',
             'alert-type' => 'success'
         );
 

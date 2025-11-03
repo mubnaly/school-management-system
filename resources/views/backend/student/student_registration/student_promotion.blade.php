@@ -10,7 +10,7 @@
                 <!-- Basic Forms -->
                 <div class="box">
                     <div class="box-header with-border text-center">
-                        <h4 class="box-title">Naikan Kelas {{ $editData['student']['name'] }}</h4>
+                        <h4 class="box-title">Upgrade{{ $editData['student']['name'] }}</h4>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -29,11 +29,11 @@
 
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <h5>Kelas <span class="text-danger">*</span></h5>
+                                                        <h5>Class <span class="text-danger">*</span></h5>
                                                         <div class="controls">
                                                             <select name="class_id" required="" class="form-control">
                                                                 <option value="" selected="" disabled="">
-                                                                    Pilih Kelas</option>
+                                                                    Select a Class</option>
                                                                 @foreach ($classes as $class)
                                                                     <option value="{{ $class->id }}"
                                                                         {{ $editData->class_id == $class->id ? 'selected' : '' }}>
@@ -50,11 +50,11 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <h5>Tahun Angkatan <span class="text-danger">*</span></h5>
+                                                        <h5>Year of the Force<span class="text-danger">*</span></h5>
                                                         <div class="controls">
                                                             <select name="year_id" required="" class="form-control">
                                                                 <option value="" selected="" disabled="">
-                                                                    Pilih Tahun</option>
+                                                                    Select Year</option>
                                                                 @foreach ($years as $year)
                                                                     <option value="{{ $year->id }}"
                                                                         {{ $editData->year_id == $year->id ? 'selected' : '' }}>
@@ -68,11 +68,11 @@
 
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <h5>Jurusan (Opsional)</h5>
+                                                        <h5>Group (Optional)</h5>
                                                         <div class="controls">
                                                             <select name="group_id" class="form-control">
                                                                 <option value="" selected="" disabled="">
-                                                                    Pilih Jurusan</option>
+                                                                    Select Group</option>
                                                                 @foreach ($groups as $group)
                                                                     <option value="{{ $group->id }}"
                                                                         {{ $editData->group_id == $group->id ? 'selected' : '' }}>
@@ -89,11 +89,11 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <h5>Shift Siswa (Opsional)</h5>
+                                                        <h5>Student Shift (Optional)</h5>
                                                         <div class="controls">
                                                             <select name="shift_id" class="form-control">
                                                                 <option value="" selected="" disabled="">
-                                                                    Pilih Shift</option>
+                                                                    Select Shift</option>
                                                                 @foreach ($shifts as $shift)
                                                                     <option value="{{ $shift->id }}"
                                                                         {{ $editData->shift_id == $shift->id ? 'selected' : '' }}>
@@ -108,7 +108,7 @@
 
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <h5>Potongan Biaya (Opsional)</h5>
+                                                        <h5>Discounted Fees (Optional)</h5>
                                                         <div class="controls">
                                                             <input type="text" name="discount" class="form-control"
                                                                 value="{{ $editData['discount']['discount'] }}">
@@ -119,8 +119,7 @@
 
 
                                             <div class="text-xs-right">
-                                                <input type="submit" class="btn btn-rounded btn-info mb-5"
-                                                    value="Naik Kelas">
+                                                <input type="submit" class="btn btn-rounded btn-info mb-5" value="Upgrade">
                                             </div>
                                         </div>
                                 </form>
