@@ -21,6 +21,7 @@ class ExamTypeController extends Controller
 
     public function ExamTypeAdd()
     {
+        // $role = auth()->user()->role;
         // $role = auth()->user()->usertype;
 
         // if ($role == 'Admin') {

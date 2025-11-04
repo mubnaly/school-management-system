@@ -161,4 +161,18 @@ Route::prefix('students')->group(function () {
     Route::get('/registration/fee/view', [RegistrationFeeController::class, 'RegistrationFeeView'])->name('registration.fee.view');
     Route::get('/reg/fee/classwisedata', [RegistrationFeeController::class, 'RegFeeClassData'])->name('student.registration.fee.classwise.get');
     Route::get('/reg/fee/payslip', [RegistrationFeeController::class, 'RegFeePayslip'])->name('student.registration.fee.payslip');
+
+
+    // Logout Route - Must be POST for security
+    Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout')->middleware('auth');
+/*
+    // Alternative: GET route with CSRF protection (not recommended but works)
+    Route::get('/admin/logout', function() {
+        Auth::logout();
+        return redirect()->route('login')->with([
+            'message' => 'You're out!',
+            'alert-type' => 'success'
+        ]);
+    })->name('admin.logout.get')->middleware('auth');
+*/
 });

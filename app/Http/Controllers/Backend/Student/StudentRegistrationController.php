@@ -26,8 +26,16 @@ class StudentRegistrationController extends Controller
         $data['years'] = StudentYear::all();
         $data['classes'] = StudentClass::all();
 
-        $data['year_id'] = StudentYear::orderBy('id', 'desc')->first()->id;
-        $data['class_id'] = StudentClass::orderBy('id', 'desc')->first()->id;
+            // Get the latest year or use default
+        $latestYear = StudentYear::orderBy('id', 'desc')->first();
+        $data['year_id'] = $latestYear ? $latestYear->id : null;
+        // $data['year_id'] = StudentYear::orderBy('id', 'desc')->first()->id;
+
+        $latestClass = StudentClass::orderBy('id', 'desc')->first();
+        $data['class_id'] = $latestClass ? $latestClass->id : null;
+        // $data['class_id'] = StudentClass::orderBy('id', 'desc')->first()->id;
+
+
         // dd($data['class_id']);
         $data['allData'] = AssignStudent::where('year_id', $data['year_id'])->where('class_id', $data['class_id'])->get();
         return view('backend.student.student_registration.student_view', $data);
@@ -89,7 +97,8 @@ class StudentRegistrationController extends Controller
             $code = rand(0000, 9999);
             $user->id_no = $final_id_no;
             $user->password = bcrypt($code);
-            $user->usertype = 'Student';
+            // $user->usertype = 'student';
+            $user->role = 'student';
             $user->code = $code;
             $user->name = $request->name;
             $user->father = $request->father;

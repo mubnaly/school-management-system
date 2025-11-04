@@ -8,16 +8,13 @@
             <!-- Main content -->
             <section class="content">
                 <div class="row">
-
-
-
                     <div class="col-12">
 
                         <div class="box">
                             <div class="box-header with-border">
-                                <h3 class="box-title">User List</h3>
+                                <h3 class="box-title">All Users</h3>
                                 <a href="{{ route('users.add') }}" style="float: right;"
-                                    class="btn btn-rounded btn-success mb-5">Add Users</a>
+                                    class="btn btn-rounded btn-success mb-5">Add User</a>
                             </div>
 
                             <!-- /.box-header -->
@@ -26,11 +23,13 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th width="5%">No.</th>
+                                                <th width="3%">No.</th>
                                                 <th>User ID</th>
-                                                <th>Access Rights</th>
                                                 <th>Name</th>
+                                                <th>Role</th>
+                                                <th>Status</th>
                                                 <th>Email</th>
+                                                <th>Phone</th>
                                                 <th width="20%">Action</th>
 
                                             </tr>
@@ -40,9 +39,11 @@
                                                 <tr>
                                                     <td>{{ $key + 1 }}</td>
                                                     <td>{{ $user->code }}</td>
-                                                    <td>{{ $user->role }}</td>
                                                     <td>{{ $user->name }}</td>
+                                                    <td>{{ $user->role }}</td>
+                                                    <td>{{ $user->status }}</td>
                                                     <td>{{ $user->email }}</td>
+                                                    <td>{{ $user->mobile }}</td>
                                                     <td>
                                                         <a href="{{ route('users.edit', $user->id) }}"
                                                             class="btn btn-info">Edit</a>

@@ -162,6 +162,28 @@
         @endif
     </script> -->
 
+
+    <script>
+        // Logout confirmation function (optional)
+        function confirmLogout() {
+            Swal.fire({
+                title: 'Confirmation Out',
+                text: "Are you sure you want to Log out?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Log Out!',
+                cancelButtonText: 'No, Cancel!',
+                background: '#1A233B',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('logout-form').submit();
+                }
+            });
+        }
+    </script>
+
 </body>
 
 </html>

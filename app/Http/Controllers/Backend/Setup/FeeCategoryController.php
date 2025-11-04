@@ -21,6 +21,7 @@ class FeeCategoryController extends Controller
 
     public function FeeCategoryAdd()
     {
+        // $role = auth()->user()->role;
         // $role = auth()->user()->usertype;
 
         // if ($role == 'Admin') {

@@ -17,7 +17,7 @@
                             <div class="box-header with-border">
                                 <h3 class="box-title">Curriculum Details{{ $detailsData['0']['student_class']['name'] }}</h3>
                                 <a href="{{ route('assign.subject.view') }}" style="float: right;"
-                                    class="btn btn-rounded btn-primary mb-5"> Kembali</a>
+                                    class="btn btn-rounded btn-primary mb-5"> Return</a>
                             </div>
 
                             <!-- /.box-header -->

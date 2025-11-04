@@ -16,6 +16,82 @@
                         <i class="nav-link-icon mdi mdi-crop-free"></i>
                     </a>
                 </li>
+            </ul>
+        </div>
+
+        <div class="navbar-custom-menu r-side">
+            <ul class="nav navbar-nav">
+                <!-- Greeting Message -->
+                <h5 class="m-auto mr-10">{{ $greeting }} <i class='{{ $icon }}'></i></h5>
+
+                <!-- User Account Dropdown -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0"
+                        data-toggle="dropdown" title="User">
+                        <img src="{{ !empty($user->image) ? url('upload/user_images/' . $user->image) : url('upload/no_image.jpg') }}"
+                            alt="">
+                    </a>
+                    <ul class="dropdown-menu animated flipInX">
+                        <li class="user-body">
+                            <a class="dropdown-item" href="{{ route('profile.view') }}">
+                                <i class="ti-user text-muted mr-2"></i> View Profile
+                            </a>
+                            <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                                <i class="ti-settings text-muted mr-2"></i> Change Profile
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('password.view') }}">
+                                <i class="ti-lock text-muted mr-2"></i> Change Password
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <!-- LOGOUT LINK IN DROPDOWN -->
+                            <a class="dropdown-item" href="javascript:void(0);"
+                                onclick="event.preventDefault(); document.getElementById('logout-form-header').submit();">
+                                <i class="ti-power-off text-danger mr-2"></i>
+                                <span class="text-danger">Log Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- LOGOUT BUTTON (Icon Only) -->
+                <li>
+                    <a class="hover-danger" href="javascript:void(0);"
+                        onclick="event.preventDefault(); document.getElementById('logout-form-header').submit();"
+                        title="Log Out">
+                        <i class="fa fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </li>
+
+                <!-- Hidden Logout Form for Header -->
+                <form id="logout-form-header" action="{{ route('admin.logout') }}" method="POST"
+                    style="display: none;">
+                    @csrf
+                </form>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+{{-- <header class="main-header">
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top pl-30">
+        <!-- Sidebar toggle button-->
+        <div>
+            <ul class="nav">
+                <li class="btn-group nav-item">
+                    <a href="#" class="waves-effect waves-light nav-link rounded svg-bt-icon" data-toggle="push-menu"
+                        role="button">
+                        <i class="nav-link-icon mdi mdi-menu"></i>
+                    </a>
+                </li>
+                <li class="btn-group nav-item">
+                    <a href="#" data-provide="fullscreen"
+                        class="waves-effect waves-light nav-link rounded svg-bt-icon" title="Full Screen">
+                        <i class="nav-link-icon mdi mdi-crop-free"></i>
+                    </a>
+                </li>
                 <li class="btn-group nav-item d-none d-xl-inline-block">
                 </li>
             </ul>
@@ -60,4 +136,4 @@
             </ul>
         </div>
     </nav>
-</header>
+</header> --}}

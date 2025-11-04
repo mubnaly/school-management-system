@@ -1,0 +1,48 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Enrollment extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'course_id',
+        'paid_amount',
+        'payment_status',
+        'enrolled_at',
+        'completed_at',
+        'progress',
+    ];
+
+    protected $casts = [
+        'paid_amount' => 'decimal:2',
+        'enrolled_at' => 'datetime',
+        'completed_at' => 'datetime',
+    ];
+
+    // Relationships
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    public function lessonProgress()
+    {
+        return $this->hasMany(LessonProgress::class, 'user_id', 'user_id')
+                    ->whereHas('lesson', function($query) {
+                        $query->whereHas('section', function($q) {
+                            $q->where('course_id', $this->course_id);
+                        });
+                    });
+    }
+}

@@ -3,15 +3,15 @@ $(function () {
         e.preventDefault();
         var link = $(this).attr("href");
         Swal.fire({
-            title: "Hapus Data Ini?",
+            title: "Delete it?",
             icon: "warning",
             iconColor: "#EF3737",
             background: "#1A233B",
             showCancelButton: true,
             confirmButtonColor: "#EF3737",
             cancelButtonColor: "#7A15F7",
-            confirmButtonText: "Hapus!",
-            cancelButtonText: "Batal",
+            confirmButtonText: "Delete",
+            cancelButtonText: "Cancel",
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = link;

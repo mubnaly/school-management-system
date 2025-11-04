@@ -2,8 +2,10 @@
 @section('admin')
     @php
 
-        $totalStudent = DB::table('users')->where('usertype', 'Student')->count();
-        $totalEmployee = DB::table('users')->where('usertype', 'Employee')->count();
+        // $totalStudent = DB::table('users')->where('usertype', 'Student')->count();
+        $totalStudent = DB::table('users')->where('role', 'student')->count();
+        // $totalEmployee = DB::table('users')->where('usertype', 'Employee')->count();
+        $totalEmployee = DB::table('users')->where('role', 'instructor')->count();
 
     @endphp
     <div class="content-wrapper">
