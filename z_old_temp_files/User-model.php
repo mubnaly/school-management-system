@@ -25,21 +25,18 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'user_name',
         'email',
         'password',
+        // 'usertype',
         'code',
         'role',
         'mobile',
         'address',
-        'notes',
         'gender',
         'image',
         'religion',
         'id_no',
         'birth',
-        'father',
-        'mother',
         'join_date',
         'designation_id',
         'status',
@@ -64,9 +61,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'birth' => 'date',
-        'join_date' => 'date',
-        'status' => 'integer',
     ];
 
     /**
@@ -78,23 +72,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    // Boot method to handle model events
-    protected static function boot()
-    {
-        parent::boot();
 
-        // Set default values before creating
-        static::creating(function ($user) {
-            if (empty($user->status)) {
-                $user->status = 1;
-            }
-            if (empty($user->religion)) {
-                $user->religion = 'muslim';
-            }
-        });
-    }
-
-    // COURSE PLATFORM RELATIONSHIPS
+    // NEW RELATIONSHIPS FOR COURSE PLATFORM
     public function taughtCourses()
     {
         return $this->hasMany(Course::class, 'instructor_id');
@@ -117,58 +96,27 @@ class User extends Authenticatable
         return $this->hasMany(LessonProgress::class);
     }
 
-    // STUDENT MANAGEMENT RELATIONSHIPS
-    public function assignedStudentData()
-    {
-        return $this->hasMany(AssignStudent::class, 'student_id');
-    }
-
-    // Scopes
+    // Scope for instructors
     public function scopeInstructors($query)
     {
         return $query->where('role', 'instructor');
     }
 
+    // Scope for students
     public function scopeStudents($query)
     {
         return $query->where('role', 'student');
     }
 
-    public function scopeActive($query)
-    {
-        return $query->where('status', 1);
-    }
-
-    // Helper methods
+    // Check if user is instructor
     public function isInstructor()
     {
         return $this->role === 'instructor';
     }
 
+    // Check if user is student
     public function isStudent()
     {
         return $this->role === 'student';
-    }
-
-    public function isAdmin()
-    {
-        return $this->role === 'admin';
-    }
-
-    public function isActive()
-    {
-        return $this->status == 1;
-    }
-
-    // Accessor for formatted name
-    public function getFullNameAttribute()
-    {
-        return ucwords($this->name);
-    }
-
-    // Accessor for role label
-    public function getRoleLabelAttribute()
-    {
-        return ucfirst($this->role);
     }
 }

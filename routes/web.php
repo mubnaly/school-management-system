@@ -18,6 +18,11 @@ use App\Http\Controllers\Backend\Setup\DesignationController;
 use App\Http\Controllers\Backend\Student\StudentRegistrationController;
 use App\Http\Controllers\Backend\Student\StudentRollController;
 use App\Http\Controllers\Backend\Student\RegistrationFeeController;
+use App\Http\Controllers\Backend\Course\CourseController;
+use App\Http\Controllers\Backend\Course\SectionController;
+use App\Http\Controllers\Backend\Course\LessonController;
+use App\Http\Controllers\Backend\Course\EnrollmentController;
+use App\Http\Controllers\Backend\Course\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,14 +44,14 @@ Route::get('/', function () {
     }
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('admin.index');
-})->name('dashboard');
+    Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+        return view('admin.index');
+    })->name('dashboard');
 
-Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+    Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-// user management all routes
-Route::prefix('users')->group(function () {
+    // user management all routes
+    Route::prefix('users')->group(function () {
 
     Route::get('/view', [UserController::class, 'UserView'])->name('user.view');
     Route::get('/add', [UserController::class, 'UserAdd'])->name('users.add');
@@ -64,10 +69,11 @@ Route::prefix('profile')->group(function () {
     Route::post('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
     Route::get('/password/view', [ProfileController::class, 'PasswordView'])->name('password.view');
     Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('password.update');
+    // Route::put('/password/update', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
 });
 
 // Student Management all routes
-Route::prefix('administrations')->group(function () {
+    Route::prefix('administrations')->group(function () {
 
     Route::get('student/class/view', [StudentClassController::class, 'ViewStudent'])->name('student.class.view');
     Route::get('student/class/add', [StudentClassController::class, 'StudentClassAdd'])->name('student.class.add');
@@ -161,6 +167,56 @@ Route::prefix('students')->group(function () {
     Route::get('/registration/fee/view', [RegistrationFeeController::class, 'RegistrationFeeView'])->name('registration.fee.view');
     Route::get('/reg/fee/classwisedata', [RegistrationFeeController::class, 'RegFeeClassData'])->name('student.registration.fee.classwise.get');
     Route::get('/reg/fee/payslip', [RegistrationFeeController::class, 'RegFeePayslip'])->name('student.registration.fee.payslip');
+
+
+
+
+// Course Management Routes (Admin & Instructor access)
+Route::prefix('courses')->middleware(['auth'])->group(function () {
+
+    // Course CRUD
+    Route::get('/', [CourseController::class, 'index'])->name('courses.index');
+    Route::get('/create', [CourseController::class, 'create'])->name('courses.create');
+    Route::post('/store', [CourseController::class, 'store'])->name('courses.store');
+    Route::get('/{id}', [CourseController::class, 'show'])->name('courses.show');
+    Route::get('/{id}/edit', [CourseController::class, 'edit'])->name('courses.edit');
+    Route::put('/{id}', [CourseController::class, 'update'])->name('courses.update');
+    Route::delete('/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
+
+    // Section Management (AJAX)
+    Route::post('/sections/store', [SectionController::class, 'store'])->name('sections.store');
+    Route::put('/sections/{id}', [SectionController::class, 'update'])->name('sections.update');
+    Route::delete('/sections/{id}', [SectionController::class, 'destroy'])->name('sections.destroy');
+    Route::post('/sections/reorder', [SectionController::class, 'reorder'])->name('sections.reorder');
+
+    // Lesson Management (AJAX)
+    Route::post('/lessons/store', [LessonController::class, 'store'])->name('lessons.store');
+    Route::put('/lessons/{id}', [LessonController::class, 'update'])->name('lessons.update');
+    Route::delete('/lessons/{id}', [LessonController::class, 'destroy'])->name('lessons.destroy');
+    Route::post('/lessons/reorder', [LessonController::class, 'reorder'])->name('lessons.reorder');
+
+    // // Enrollment Management
+    // Route::get('/{id}/enrollments', [EnrollmentController::class, 'index'])->name('courses.enrollments');
+    // Route::post('/{id}/enroll', [EnrollmentController::class, 'enroll'])->name('courses.enroll');
+});
+
+// // Category Management (Admin only)
+// Route::prefix('categories')->middleware(['auth'])->group(function () {
+//     Route::get('/', [CategoryController::class, 'index'])->name('categories.index');
+//     Route::get('/create', [CategoryController::class, 'create'])->name('categories.create');
+//     Route::post('/store', [CategoryController::class, 'store'])->name('categories.store');
+//     Route::get('/{id}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+//     Route::put('/{id}', [CategoryController::class, 'update'])->name('categories.update');
+//     Route::delete('/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+// });
+
+// // Student Course Access (For enrolled students)
+// Route::prefix('my-courses')->middleware(['auth'])->group(function () {
+//     Route::get('/', [EnrollmentController::class, 'myCourses'])->name('my.courses');
+//     Route::get('/{id}/learn', [EnrollmentController::class, 'learn'])->name('course.learn');
+//     Route::post('/{id}/complete-lesson', [EnrollmentController::class, 'completeLesson'])->name('lesson.complete');
+// });
+
 
 
     // Logout Route - Must be POST for security
